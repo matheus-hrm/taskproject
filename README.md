@@ -48,4 +48,5 @@ python manage.py runserver
 ```
 
 5. Abra no seu browser pelo localhost
-   ```http://127.0.0.1:8000/ 
+```
+   http://127.0.0.1:8000/ 
