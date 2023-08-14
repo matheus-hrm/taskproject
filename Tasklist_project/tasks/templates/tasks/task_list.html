@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static '\tasks\styles.css' %}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+  {% block content %}
+    <h1>Lista de Tarefas</h1>
+    <ul class="task-grid">
+        {% for task in tasks %}
+            <li class="task-block" style="background-color: {{ task.color }}">
+              {{ task.title }}
+              {% if task.completed %} 
+                <i class="material-icons">check</i>
+              {% else %}
+                <i class="material-icons" color="red">clear</i>
+              {% endif %}
+              
+              <a href="{% url 'update_task' task.pk %}">
+                <i class="material-icons">edit</i>  
+                Editar
+              </a>
+              <a href="{% url 'delete_task' task.pk %}">
+                <i class="material-icons">delete</i>
+                Excluir
+              </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_task' %}">Adicionar Tarefa</a>
+  {% endblock %}
+
+</body>
+</html>
+
+

@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Tarefa</title>
+    <link rel="stylesheet" href="{% static '\tasks\styles.css' %}">
+</head>
+<body>
+    <h1>Adicionar Tarefa</h1>
+    <form class="formulario" method="post">
+        {% csrf_token %}
+        
+        <label for="title">Título:</label>
+        <input type="text" name="title" id="title" required><br>
+        
+        <label for="description">Descrição:</label>
+        <textarea name="description" id="description" rows="4"></textarea><br>
+        
+        <label for="due_date">Data</label>
+        <input type="date" name="due_date" id="due_date"><br>
+        
+        <label for="due_time">Hora</label>
+        <input type="time" name="due_time" id="due_time"><br>
+        
+        <button type="submit">Adicionar</button>
+    </form>
+    <a href="{% url 'task_list' %}">Voltar para a Lista</a>
+</body>
+</html>

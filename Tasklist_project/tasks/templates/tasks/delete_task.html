@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deletar Tarefa</title>
+    <link rel="stylesheet" href="{% static '\tasks\styles.css' %}">
+</head>
+<body>
+    <h1>Deletar Tarefa</h1>
+    <p>Você está prestes a deletar a tarefa "{{ task.title }}". Tem certeza?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Deletar</button>
+    </form>
+    <a href="{% url 'task_list' %}">Voltar para a Lista</a>
+</body>
+</html>
