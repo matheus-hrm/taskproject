@@ -21,4 +21,31 @@ Certifique-se de ter o seguinte instalado em sua máquina:
 1. Clone este repositório em sua máquina local:
 
 ```bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+git clone https://github.com/matheus-hrm/taskproject.git
+```
+
+2. Abra o prompt de comando dentro do repositório
+
+```bash
+cd taskproject
+```
+
+2. Instale as dependências do projeto:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Execute as migrações do banco de dados:
+
+```bash
+python manage.py migrate
+```
+
+4. Inicie o servidor web
+```bash
+python manage.py runserver
+```
+
+5. Abra no seu browser pelo localhost
+   ```http://127.0.0.1:8000/ 
