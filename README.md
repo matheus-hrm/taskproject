@@ -28,6 +28,7 @@ git clone https://github.com/matheus-hrm/taskproject.git
 
 ```bash
 cd taskproject
+cd Tasklist_project
 ```
 
 2. Instale as dependências do projeto:
