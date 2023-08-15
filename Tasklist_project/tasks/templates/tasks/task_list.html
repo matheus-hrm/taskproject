@@ -14,6 +14,7 @@
         {% for task in tasks %}
             <li class="task-block" style="background-color: {{ task.color }}">
               {{ task.title }}
+              <p class="task-description">{{ task.description }}</p>
               {% if task.completed %} 
                 <i class="material-icons">check</i>
               {% else %}
@@ -31,7 +32,8 @@
             </li>
         {% endfor %}
     </ul>
-    <a href="{% url 'add_task' %}">Adicionar Tarefa</a>
+    <a href="{% url 'add_task' %}">
+      <button class="addbutton">Adicionar Tarefa</button> 
   {% endblock %}
 
 </body>
